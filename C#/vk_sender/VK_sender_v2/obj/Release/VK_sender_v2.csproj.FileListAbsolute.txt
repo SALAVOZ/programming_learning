@@ -1,0 +1,11 @@
+C:\Users\Александр\Desktop\VK_sender_v2.exe.config
+C:\Users\Александр\Desktop\VK_sender_v2.exe
+C:\Users\Александр\Desktop\VK_sender_v2.pdb
+C:\Users\Александр\source\repos\VK_sender_v2\obj\Release\VK_sender_v2.csprojAssemblyReference.cache
+C:\Users\Александр\source\repos\VK_sender_v2\obj\Release\VK_sender_v2.Form1.resources
+C:\Users\Александр\source\repos\VK_sender_v2\obj\Release\VK_sender_v2.Properties.Resources.resources
+C:\Users\Александр\source\repos\VK_sender_v2\obj\Release\VK_sender_v2.csproj.GenerateResource.cache
+C:\Users\Александр\source\repos\VK_sender_v2\obj\Release\VK_sender_v2.csproj.CoreCompileInputs.cache
+C:\Users\Александр\source\repos\VK_sender_v2\obj\Release\VK_sender_v2.csproj.CopyComplete
+C:\Users\Александр\source\repos\VK_sender_v2\obj\Release\VK_sender_v2.exe
+C:\Users\Александр\source\repos\VK_sender_v2\obj\Release\VK_sender_v2.pdb

@@ -1,0 +1,29 @@
+<mat-card style="margin-left: 100px;width:800px; margin-bottom: 10px;">
+  <div style="display:inline-flex;">
+          <div>
+            <img style="padding-left: 20px;height: 20px; width: 20px; margin-top: 50px;" src="./assets/img/heart.png" >
+          </div>
+          <div>
+            <img style="margin-left: 50px;height: 100px; width: 100px; border-radius: 20px;" [src]="card.img_path">
+          </div>
+          <div style="margin-left: 70px;" >
+            <h2>{{card.author}}</h2>
+            <p>{{card.title}}</p>
+          </div>
+          <div style="width:180px; margin-left: 50px; margin-top: 30px;">
+            <button class="count-buttons__button_minus" (click)="decrease()" >-</button>
+            <input class="count-buttons__input" type="text" readonly [value]="count" #Count>
+            <button class="count-buttons__button_plus" (click)="increase()" >+</button>
+            <div class="price_pod_knopkoi">
+                    {{card.price}} Р /шт
+                  </div>
+           </div>
+                <div style="margin-left: 0px; margin-top:50px; float: right;" >
+                  {{priceAll}} Рублей
+                </div>
+  </div>
+  <div style="float: right;" >
+  <button (click)="deleteAlbom()" >&times;</button>
+  </div>
+</mat-card>
+

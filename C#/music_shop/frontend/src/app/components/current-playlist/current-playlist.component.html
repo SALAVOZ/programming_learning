@@ -1,0 +1,95 @@
+<app-header></app-header>
+
+<main>
+  <br>
+  <h2 class="left-centered">Наслаждайтесь любимой музыкой в Вашем плейлисте. <br>Приятного прослушивания!</h2>
+  <section>
+    <div class="tracks-wrapper">
+      <h3 class="label-centered">Треки</h3>
+      <div class="track-container">
+        <a class="track"
+           (click)="changeAudio('https://cdndl.zaycev.net/track/24640159/6pGxk5jCuxPqWhZPLrt5nc4WoTWN5rz5XoaT354RQCCEmTHHwr2kdXsp3KAC5naudh6VRTyLdutoUBvrpM7kfv14UjCFiSfYxGTPgz9W8L5FmzR8XHNTi5WptZrYmcdfbt6fDgwAHqcyWmKMRAJcKMtBBnAvuRpQ7aK226u6vpuBqVHzr3JEQ1iaC6KPTRoNBF3VxG11o51edGGRo4Ui7U6LD32BZAFtRRZvhDFjcgKmSB54Z6FoQZZu9bi52rzRoV7xfvPFsRrvVZ4wDQ3tMgvtTqH1aSsDwbR5QQtEdpTGn8cJqkRexqLqAAK8KGqM817i5pfgsufgYS3CnxrvwZbwks1wkF')"
+           routerLink="/playlist">
+          <img class="play-img" src="./assets/svg/play-button.svg">
+          <img class="track-img"
+               src="https://t2.genius.com/unsafe/220x220/https%3A%2F%2Fimages.genius.com%2F9f30798fa12fa954f1fa88393cc2b657.1000x1000x1.jpg">
+          <strong class="track-text">
+            <div class="track-name">Infinite Tsukuyomi</div>
+            <div> – </div>
+            <div class="track-author">ROCKET</div>
+          </strong>
+        </a>
+        <a class="track"
+           (click)="changeAudio('//dl.muzonovs.ru/files/music/2020/07/1-2-3-4-5-6-7-8-m-s-in-my-bank-account-21-savage-tik-tok.mp3')"
+           routerLink="/playlist">
+          <img class="play-img" src="./assets/svg/play-button.svg">
+          <img class="track-img" src="https://i1.sndcdn.com/artworks-000232634900-nf5ukl-t500x500.jpg">
+          <strong class="track-text">
+            <div class="track-name">Bank Account</div>
+            <div> – </div>
+            <div class="track-author">21 Savage</div>
+          </strong>
+        </a>
+        <a class="track"
+           (click)="changeAudio('https://pesni.life/files/10981333c07f4/Vowl-her.mp3')"
+           routerLink="/playlist">
+          <img class="play-img" src="./assets/svg/play-button.svg">
+          <img class="track-img" src="https://pesni.life/pic/20/85/208566.400x400.jpg">
+          <strong class="track-text">
+            <div class="track-name">her</div>
+            <div> – </div>
+            <div class="track-author">Vowl.</div>
+          </strong>
+        </a>
+        <a class="track"
+           (click)="changeAudio('https://cdn.muzladaz.ru/uploads/files/2020-06/1592567746_iann-dior-gone-girl.mp3')"
+           routerLink="/playlist">
+          <img class="play-img" src="./assets/svg/play-button.svg">
+          <img class="track-img" src="https://s.mxmcdn.net/images-storage/albums4/4/4/0/3/4/7/46743044_800_800.jpg">
+          <strong class="track-text">
+            <div class="track-name">gone girl</div>
+            <div> – </div>
+            <div class="track-author">iann dior</div>
+          </strong>
+        </a>
+      </div>
+    </div>
+    <div id="player-wrapper">
+      <app-record-player class="player" id="player" [src]=audioSrc [style.transform]="scaleXY"></app-record-player>
+    </div>
+
+    <!--    <svg class="player-svg" viewBox="0 0 800 800">-->
+    <!--      <path fill="#181819" d="M400,1C179.6,1,1,179.6,1,400s178.6,399,399,399s399-178.6,399-399S620.4,1,400,1zM400,409.8c-5.4,0-9.8-4.4-9.8-9.8s4.4-9.8,9.8-9.8s9.8,4.4,9.8,9.8S405.4,409.8,400,409.8z"></path>-->
+    <!--      <g stroke-width="1.5" stroke="#141415" fill="#181819">-->
+    <!--        <path d="M400,20C190.1,20,20,190.1,20,400s170.1,380,380,380s380-170.1,380-380S609.9,20,400,20z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,30C195.7,30,30,195.6,30,400s165.7,370,370,370s370-165.7,370-370S604.3,30,400,30z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,40C201.2,40,40,201.2,40,400s161.2,360,360,360s360-161.2,360-360S598.8,40,400,40z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,50C206.7,50,50,206.7,50,400s156.7,350,350,350s350-156.7,350-350S593.3,50,400,50z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,60C212.2,60,60,212.2,60,400s152.2,340,340,340s340-152.2,340-340S587.8,60,400,60z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,70C217.8,70,70,217.8,70,400s147.8,330,330,330s330-147.8,330-330S582.2,70,400,70z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,80C223.3,80,80,223.3,80,400s143.3,320,320,320s320-143.3,320-320S576.7,80,400,80z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,90C228.8,90,90,228.8,90,400s138.8,310,310,310s310-138.8,310-310S571.2,90,400,90z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,100c-165.7,0-300,134.3-300,300s134.3,300,300,300s300-134.3,300-300S565.7,100,400,100z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,110c-160.2,0-290,129.8-290,290s129.8,290,290,290s290-129.8,290-290S560.2,110,400,110z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,120c-154.6,0-280,125.4-280,280s125.4,280,280,280s280-125.4,280-280S554.6,120,400,120z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,130c-149.1,0-270,120.9-270,270s120.9,270,270,270s270-120.9,270-270S549.1,130,400,130z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,140c-143.6,0-260,116.4-260,260s116.4,260,260,260s260-116.4,260-260S543.6,140,400,140z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,150c-138.1,0-250,111.9-250,250s111.9,250,250,250s250-111.9,250-250S538.1,150,400,150z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,160c-132.5,0-240,107.5-240,240s107.5,240,240,240s240-107.5,240-240S532.5,160,400,160z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,170c-127,0-230,103-230,230s103,230,230,230s230-103,230-230S527,170,400,170z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,180c-121.5,0-220,98.5-220,220s98.5,220,220,220s220-98.5,220-220S521.5,180,400,180z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,190c-116,0-210,94-210,210s94,210,210,210s210-94,210-210S516,190,400,190z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--        <path d="M400,200c-110.5,0-200,89.5-200,200s89.5,200,200,200s200-89.5,200-200S510.5,200,400,200z M399.2,414.8c-8.6,0-15.5-6.9-15.5-15.5s6.9-15.5,15.5-15.5s15.5,6.9,15.5,15.5S407.8,414.8,399.2,414.8z"></path>-->
+    <!--      </g>-->
+    <!--    </svg>-->
+    <!--    <svg class="">-->
+    <!--      <svg id="icon-tonearm" viewBox="0 0 800 800">-->
+    <!--        &lt;!&ndash;circle cx="400" cy="400" r="400" stroke="pink" fill="none" stroke-width="3"/&ndash;&gt;-->
+    <!--        <path style="fill:#7979D8;" d="M354.5,761.6l11.9,6.2c0,0,37.1-91.5,42.4-123.7c2.7-16.4-1.1-103.9-1.1-103.9V307.5h-14.7l-0.1,232.7c0,0,3.7,87.5,1.1,103.9C389,674.6,354.5,761.6,354.5,761.6z"></path>-->
+    <!--        <rect x="379.7" y="239.7" style="fill:#474283;" width="40.7" height="67.8"></rect>-->
+    <!--        <circle style="fill:#fff;" cx="400" cy="400" r="22.6"></circle>-->
+    <!--        <path style="fill:#fff;" class="grabbable" d="M353,738.9l18.3-22.9l13.2,6.4l-6.2,28.7l-22.8,47.1c0,0-1.2,3.3-15.4-3.6c-11.2-5.4-10-8.7-10-8.7L353,738.9z"></path>-->
+    <!--      </svg>-->
+    <!--    </svg>-->
+  </section>
+</main>

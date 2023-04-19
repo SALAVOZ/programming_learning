@@ -1,0 +1,15 @@
+<app-header></app-header>
+<h1 style="text-align: center" >Регистрация</h1>
+<div style="border: 1px solid green; border-radius: 20px; padding: 100px; width: 500px; margin-left: 430px; margin-top: 10px;" >
+<form [formGroup]="form" (ngSubmit)="submit(email.value, password.value)" >
+      <label>Login </label>
+      <input formControlName="email" type="email" matInput placeholder="Введите email..." #email>
+  <br />
+  <br />
+      <label>Password </label>
+      <input formControlName="password" type="password" matInput placeholder="Введите password..." #password>
+  <br />
+  <br />
+      <button mat-flat-button color="primary" [disabled]="form.invalid" type="submit">Register</button>
+</form>
+</div>

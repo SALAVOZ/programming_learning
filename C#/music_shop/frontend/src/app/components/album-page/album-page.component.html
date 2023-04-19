@@ -1,0 +1,57 @@
+<app-header></app-header>
+
+<main>
+
+  <div class="tracks-wrapper" *ngFor="let i of tracksList">
+
+    <div style="text-align: center;">
+      <h1 style="font-family: 'Marck Script', cursive; color: rgb(90, 0, 175);">{{i.authorName}} / {{i.name}}</h1>
+    </div>
+
+    <!-- Раскрывающееся поле с картинками автора -->
+
+    <button (click)="goToAuthorPage(i.authorId)">
+      Перейти на страницу автора
+    </button>
+    <button style="width: 46%; display: inline-flex;" (click)="getPhotos()">Фотографии альбома</button>
+    <button style="width: 46%; display: inline-flex; margin-left: 3%;" (click)="getInfo()">Описание альбома</button>
+
+    <div *ngIf="toggleInfo">
+      <p style="margin-top: 0;">
+        {{i.description}}
+      </p>
+    </div>
+
+    <div *ngIf="togglePhotos">
+      <p class="imgGrid">
+        <img class="images" src={{i.albumImage}}>
+      </p>
+    </div>
+
+    <!-- Список треков альбома -->
+
+    <div class="track-container">
+
+      <a class="track" *ngFor="let j of i.albumTracks"
+         (click)="changeAudio(j.urlToDrive)">
+        <img class="play-img" src="./assets/svg/track-images/play-button.svg"/>
+        <img class="track-img" src={{i.albumImage}}/>
+        <strong class="track-text">
+          <div class="track-name">{{j.name}}</div>
+          <div> – </div>
+          <div class="track-author">{{j.authorName}}</div>
+        </strong>
+      </a>
+
+    </div>
+
+  </div>
+
+  <div id="player-wrapper">
+    <button class="cart-button" onclick="document.location='/cart'">
+      Добавить альбом в корзину
+    </button>
+    <app-record-player class="player" [src]=audioSrc></app-record-player>
+  </div>
+
+</main>

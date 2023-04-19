@@ -1,0 +1,9 @@
+<div style="border: 1px solid red; border-radius: 20px; margin-left: 50px; padding: 10px; width: 200px;" >
+  <p>ID: {{user.userId}}</p>
+  <p>EMAIL: {{user.email}}</p>
+  <p>ROLE: {{user.role}}</p>
+  <select [(ngModel)]="newRole" >
+    <option [value]="role" *ngFor="let role of roles" >{{role}}</option>
+  </select>
+  <button (click)="changeRole(user.userId, newRole)" >Change Role</button>
+</div>

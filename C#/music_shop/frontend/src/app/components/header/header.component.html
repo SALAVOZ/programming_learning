@@ -1,0 +1,20 @@
+<header>
+  <div class="header-menu-wrapper">
+    <a *ngIf="isAuth()" class="header-menu" href="/">Главная</a>
+    <a *ngIf="isAuth()" class="header-menu" href="/catalog">Каталог</a>
+    <a *ngIf="isAuth()" class="header-menu" href="/cart">Корзина</a>
+    <a *ngIf="isAuth()" class="header-menu" href="/about">О проекте</a>
+  </div>
+  <a class="login-menu-button">
+    <a *ngIf="!isAuth()"  href="/">Вход</a>
+    <span *ngIf="!isAuth()" > | </span>
+    <a *ngIf="!isAuth()"  href="/register">Регистрация</a>
+    <a *ngIf="isAuth()"  href="/lk">Личный кабинет</a>
+    <span *ngIf="isAuth()" > | </span>
+    <span *ngIf="isAuth()" (click)="logout()" class="login-menu" href="/">Выйти</span>
+  </a>
+</header>
+
+<!-- окно логина -->
+
+

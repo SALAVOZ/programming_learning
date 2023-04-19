@@ -1,0 +1,14 @@
+<app-header></app-header>
+<h1 style="text-align: center" >Вход</h1>
+<div style="border: 1px solid green; border-radius: 20px; padding: 100px; width: 500px; margin-left: 440px; margin-top: 10px;" >
+  <label>Login </label>
+  <input style="width: 300px;" type="email" matInput placeholder="Введите email..." #email>
+     <br />
+     <br />
+   <label>Password </label>
+   <input style="width: 300px;" type="password" matInput placeholder="Введите password..." #password>
+     <br />
+    <a href="/forgot" >Забыли пароль</a>
+    <br />
+    <button mat-flat-button color="primary" (click)="login(email.value, password.value)">Login</button>
+</div>

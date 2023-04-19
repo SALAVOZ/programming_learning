@@ -1,0 +1,98 @@
+<div style="margin-left: 100px;display: flex" >
+  <div style="border: 1px solid red;border-radius: 20px; width: 180px; padding: 40px;margin-right: 50px; " >
+    <h2>Добавление альбома</h2>
+    <label>Название автора: </label>
+    <input type="text" placeholder="Введите автора..." #author_add>
+    <br />
+    <br />
+    <label>Название альбома </label>
+    <input type="text" placeholder="Введите название альбома..." #title_add>
+    <br />
+    <br />
+    <label>Год выпуска: </label>
+    <input type="number" value="2000" placeholder="Введите год выпуска..." #year_add>
+    <br />
+    <br />
+    <label>Путь к картинке: </label>
+    <input type="text" value="assets/img/" placeholder="Введите путь до картинки..." #img_path_add>
+    <br />
+    <br />
+    <label>Цена альбома: </label>
+    <input type="number" value="999" placeholder="Введите цену..." #price_add>
+    <br />
+    <br />
+    <label>Путь к музыке: </label>
+    <input type="text" placeholder="Введите путь до музыки..." #music_path_add>
+    <br />
+    <br />
+    <button (click)="addAlbom(author_add.value, title_add.value, year_add.valueAsNumber,
+    img_path_add.value, price_add.valueAsNumber, music_path_add.value)">
+      Добавить альбом</button>
+  </div>
+  <div style="border: 1px solid red;border-radius: 20px; width: 180px; padding: 40px;margin-right: 50px; ">
+    <h2>Обновление альбома</h2>
+    <select (change)="UpdateInfoUpdate(currentTitle_update)" [(ngModel)]="currentTitle_update" >
+      <option></option>
+      <option *ngFor="let i of titles">{{i}}</option>
+    </select>
+    <br />
+    <br />
+    <label>Название автора: </label>
+    <input [value]="choosedAlbom_update.author" type="text" placeholder="Выберите альбом" #author_update>
+    <br />
+    <br />
+    <label>Год выпуска: </label>
+    <input [value]="choosedAlbom_update.year" type="number" value="2000" placeholder="Выберите альбом" #year_update>
+    <br />
+    <br />
+    <label>Путь к картинке: </label>
+    <input [value]="choosedAlbom_update.img_path" type="text" value="assets/img/" placeholder="Выберите альбом" #img_path_update>
+    <br />
+    <br />
+    <label>Цена альбома: </label>
+    <input [value]="choosedAlbom_update.price" type="number" value="999" placeholder="Выберите альбом" #price_update>
+    <br />
+    <br />
+    <label>Путь к музыке: </label>
+    <input [value]="choosedAlbom_update.music_path" type="text" placeholder="Выберите альбом" #music_path_update>
+    <br />
+    <br />
+    <button (click)="updateAlbom(author_update.value, currentTitle_update, year_update.valueAsNumber,
+    img_path_update.value, price_update.valueAsNumber, music_path_update.value)">
+      Обновить альбом</button>
+  </div>
+
+  <div>
+    <div style="border: 1px solid red;border-radius: 20px; width: 180px; padding: 40px;margin-right: 50px; ">
+      <h2>Удаление альбома</h2>
+      <select [(ngModel)]="currentTitle_delete" (change)="UpdateInfoDelete(currentTitle_delete)" >
+        <option></option>
+        <option *ngFor="let i of titles">{{i}}</option>
+      </select>
+      <br />
+      <br />
+      <label>Название автора: </label>
+      <input disabled [value]="choosedAlbom_delete.author"  type="text" placeholder="Выберите альбом" #author_delete>
+      <br />
+      <br />
+      <label>Год выпуска: </label>
+      <input disabled [value]="choosedAlbom_delete.year" type="number" value="2000" placeholder="Выберите альбом" #year_delete>
+      <br />
+      <br />
+      <label>Путь к картинке: </label>
+      <input disabled [value]="choosedAlbom_delete.img_path" type="text" value="assets/img/" placeholder="Выберите альбом" #img_path_delete>
+      <br />
+      <br />
+      <label>Цена альбома: </label>
+      <input disabled [value]="choosedAlbom_delete.price" type="number" value="999" placeholder="Выберите альбом" #price_delete>
+      <br />
+      <br />
+      <label>Путь к музыке: </label>
+      <input disabled [value]="choosedAlbom_delete.music_path" type="text" placeholder="Выберите альбом" #music_path_delete>
+      <br />
+      <br />
+      <button (click)="deleteAlbom(currentTitle_delete)">
+        Удалить альбом</button>
+    </div>
+  </div>
+</div>

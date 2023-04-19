@@ -1,0 +1,37 @@
+app-track {
+  width: 100%;
+}
+
+.track {
+  height: 70px;
+  width: 95%;
+  background: #ecf0f1;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  z-index: 10;
+}
+.track:hover {
+  background: #dfe6e9;
+}
+.play-img {
+  height: 30%;
+  margin-left: 20px;
+}
+.track-img {
+  margin-left: 20px;
+  height: 70%;
+  border-radius: 3px;
+}
+.track-text {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.track-name {
+  font-size: large;
+}
+.track-author {
+  color: #3498db;
+}

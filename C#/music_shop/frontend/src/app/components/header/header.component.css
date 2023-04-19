@@ -1,0 +1,55 @@
+header {
+  width: 100%;
+  height: 60px;
+  border-bottom: #297255 2px solid;
+  /*border-top: #b2d80b 3px solid;*/
+  box-shadow: 0 0 10px 0 #95a5a6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /*font-size: larger;*/
+  font-size: 22px;
+  background: linear-gradient(to left, rgb(49, 228, 117), rgb(122, 233, 233));
+}
+.header-menu {
+  color: rgb(108, 0, 158);
+  margin: 0 0 0 80px;
+}
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+.login-menu-button {
+  cursor: pointer;
+  color: rgb(108, 0, 158);
+  margin-right: 60px;
+  user-select: none;
+}
+
+section {
+  margin: 0;
+  position: absolute;
+  top: 69px;
+  right: 0;
+  width: 400px;
+  z-index: 10;
+  background-color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  border: #297255 2px solid;
+  box-shadow: 0 5px 10px 0 #222;
+  transform-origin: top;
+}
+
+input {
+  display: block;
+  font-size: medium;
+  width: 100%;
+  height: auto;
+}
+
+button {
+  width: max-content;
+}
+

@@ -1,0 +1,39 @@
+<app-header></app-header>
+<main>
+  <h2 class="label-centered">Добавляйте альбомы и треки в текущий плейлист!</h2>
+  <h3 class="label-centered">
+    <a class="to-playlist" routerLink="/playlist">Перейти в текущий плейлист</a>
+  </h3>
+  <div class="albums-wrapper">
+    <h2 class="label-centered">Альбомы</h2>
+    <div class="albums-container">
+      <a class="album" routerLink="/songs-and-albums">
+        <img class="album-img" src="https://upload.wikimedia.org/wikipedia/ru/thumb/b/b9/Hate_Love.jpg/274px-Hate_Love.jpg">
+        <strong class="album-text">Hatelove</strong>
+        <strong class="album-text">FACE</strong>
+      </a>
+      <a class="album" routerLink="/songs-and-albums">
+        <img class="album-img" src="https://img.discogs.com/hQhvmJu5Zclp7y2lT4Au2GLKIVA=/fit-in/400x400/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-9898423-1488154544-7027.jpeg.jpg">
+        <strong class="album-text">idfc</strong>
+        <strong class="album-text">blackbear</strong>
+      </a>
+      <a class="album" routerLink="/songs-and-albums">
+        <img class="album-img" src="https://vpesne.com/pic/20/85/208566.400x400.jpg">
+        <strong class="album-text">her</strong>
+        <strong class="album-text">Vowl.</strong>
+      </a>
+      <a class="album" routerLink="/songs-and-albums">
+        <img class="album-img" src="https://t2.genius.com/unsafe/220x220/https%3A%2F%2Fimages.genius.com%2F9f30798fa12fa954f1fa88393cc2b657.1000x1000x1.jpg">
+        <strong class="album-text">Tsukuyomi Dream</strong>
+        <strong class="album-text">ROCKET</strong>
+      </a>
+    </div>
+  </div>
+  <div class="tracks-wrapper">
+    <h2 class="label-centered">Треки</h2>
+    <a class="track-container">
+      <app-track></app-track>
+      <app-track></app-track>
+    </a>
+  </div>
+</main>

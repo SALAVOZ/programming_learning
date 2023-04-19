@@ -1,0 +1,145 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,cyrillic);
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+
+/* Общая разметка страницы - деление на правую и левую части */
+main {
+  /*font-family: 'Marck Script', cursive;*/
+  overflow-x: hidden;
+  background:#6ccaa5;
+  height: 90.5%;
+}
+
+.tracks-wrapper {
+  width: 50%;
+  /*padding: 0 0;*/
+  margin-left: 3%;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+}
+
+#player-wrapper {
+  width: 50%;
+}
+
+.player {
+  transform: scale(0.85);
+  transform-origin: bottom right;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 5%;
+  right: 3%;
+  bottom: auto;
+  width: 671px;
+}
+
+.cart-button {
+  font-size: 30px;
+  border-width: 5px;
+  border-color: rgb(60, 255, 0);
+  background: linear-gradient(to left, rgb(91, 248, 51), rgb(242, 255, 120));
+  transform-origin: bottom right;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 11%;
+  right: 3.25%;
+  bottom: auto;
+  width: 42%;
+}
+.cart-button:hover {
+  background: #fffd81;
+}
+
+/* Список треков */
+
+a {
+  text-decoration: none;
+  color: #8e44ad;
+}
+
+.track-container {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2%;
+  margin-bottom: 1%;
+}
+
+.track {
+  height: 70px;
+  width: 100%;
+  /*border-color: rgb(10, 26, 251);*/
+  background: linear-gradient(to left, rgb(191, 224, 251), rgb(122, 233, 233));
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.track:hover {
+  background: #2c2a2a;
+}
+.play-img {
+  height: 30%;
+  margin-left: 20px;
+}
+.track-img {
+  margin-left: 20px;
+  height: 70%;
+  border-radius: 3px;
+}
+.track-text {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.track-name {
+  font-size: large;
+}
+.track-author {
+  color: #3498db;
+}
+
+/* Раскрывающиеся поля с картинками альбома и информацией */
+
+button {
+  height: 70px;
+  width: 95%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  border-color: blue;
+  background: linear-gradient(to right, rgb(86, 179, 255), rgb(122, 233, 233));
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  font-family: 'Marck Script', cursive;
+  font-size: 24px;
+}
+
+button:hover {
+  background: #b9eaff;
+}
+
+p {
+  margin-left: 25px;
+  font-family: 'Marck Script', cursive;
+  font-size: 24px;
+}
+
+.images {
+  height: 200px;
+  width: 200px;
+  padding: 15px; /* Расстояние от картинки до рамки */
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.imgGrid {
+  text-align: center;
+}

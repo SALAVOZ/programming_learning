@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Codrops" />
+
+</head>
+<body>
+<app-header></app-header>
+<svg class="hidden">
+  <!-- made with Icomoon.io, Icons from http://www.entypo.com/ and https://icomoon.io/ -->
+  <defs>
+    <symbol id="icon-lp-mini" viewBox="0 0 800 800">
+      <title>LP Mini</title>
+      <g style="fill: #181819; stroke: #141415; stroke-width: 1.5;">
+        <circle cx="400" cy="400" r="380" />
+        <circle cx="400" cy="400" r="370" />
+        <circle cx="400" cy="400" r="360" />
+        <circle cx="400" cy="400" r="350" />
+        <circle cx="400" cy="400" r="340" />
+        <circle cx="400" cy="400" r="330" />
+        <circle cx="400" cy="400" r="320" />
+        <circle cx="400" cy="400" r="310" />
+        <circle cx="400" cy="400" r="300" />
+        <circle cx="400" cy="400" r="290" />
+        <circle cx="400" cy="400" r="280" />
+        <circle cx="400" cy="400" r="270" />
+        <circle cx="400" cy="400" r="260" />
+        <circle cx="400" cy="400" r="250" />
+        <circle cx="400" cy="400" r="240" />
+        <circle cx="400" cy="400" r="230" />
+        <circle cx="400" cy="400" r="220" />
+        <circle cx="400" cy="400" r="210" />
+        <circle cx="400" cy="400" r="200" />
+      </g>
+    </symbol>
+    <symbol id="icon-tonearm" viewBox="0 0 800 800">
+      <!--circle cx="400" cy="400" r="400" stroke="pink" fill="none" stroke-width="3"/-->
+      <path style="fill:#7979D8;" d="M354.5,761.6l11.9,6.2c0,0,37.1-91.5,42.4-123.7c2.7-16.4-1.1-103.9-1.1-103.9V307.5h-14.7l-0.1,232.7c0,0,3.7,87.5,1.1,103.9C389,674.6,354.5,761.6,354.5,761.6z"/>
+      <rect x="379.7" y="239.7" style="fill:#474283;" width="40.7" height="67.8"/>
+      <circle style="fill:#fff;" cx="400" cy="400" r="22.6"/>
+      <path style="fill:#fff;" class="grabbable" d="M353,738.9l18.3-22.9l13.2,6.4l-6.2,28.7l-22.8,47.1c0,0-1.2,3.3-15.4-3.6c-11.2-5.4-10-8.7-10-8.7L353,738.9z"/>
+    </symbol>
+  </defs>
+</svg><!-- SVGs -->
+<main>
+  <div class="view view--grid view--current">
+    <h2 style="text-align: center; font-size: 40px;" >Корзина</h2>
+
+
+
+
+
+    <div style="float: right; width: 300px; margin-right: 50px;" >
+
+      <mat-card style="position: fixed" >
+        <p><label>Общая сумма:</label>{{total}}</p>
+        <p>
+          <button type="submit" (click)="buy()" >Купить</button>
+        </p>
+      </mat-card>
+
+    </div>
+    <app-show
+      *ngFor="let i of cards"
+      [card]="i"
+      (onRemove)="removeAlbom($event)"
+      (onPlusTotal)="makePlusTotal($event)"
+      (onMinusTotal)="makeMinusTotal($event)"
+      (onTotal)="initialTotal($event)"
+      style="margin-right: 600px"
+    ></app-show>
+  </div>
+</main>
+
+<!--
+- position expander: set opacity to 1, set top and left to the point where the mouse it. Animate to scale3d(1,1,1). To do the opposite, animate to scale3d(0,0,1) or scale(0.001,0.001,1).
+- set class current of the respective single (set class single--current)
+- then set view view--single to view view--single view--current
+- to navigate, set new single to single--current and remove single--current from previous one (needs some adjustment)
+-->
+</body>
+</html>
+
+<style>
+
+  @font-face {
+    font-family: 'nexa_boldregular';
+    font-weight: bold;
+    font-style: normal;
+    src: url('../fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.eot');
+    src: url('../fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.woff2') format('woff2'), url('../fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.woff') format('woff'), url('../fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.ttf') format('truetype'), url('../fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.svg#nexa_boldregular') format('svg');
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  .hidden {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  body {
+    font-family: 'Lucida Sans Typewriter', 'Lucida Console', monaco, 'Bitstream Vera Sans Mono', monospace;
+    overflow-x: hidden;
+    color: #474283;
+    background: #45cb96;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    outline: none;
+  }
+
+  a:hover,
+  a:focus {
+    color: #349770;
+  }
+
+  /* grid */
+
+  .grid {
+    position: relative;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  @-webkit-keyframes spinLoader {
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spinLoader {
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  .page-header,
+  .grid {
+    max-width: 1200px;
+  }
+
+  .grid__item {
+    position: relative;
+    width: 50%;
+    min-width: 280px;
+    margin: 0 0 2em;
+    padding: 1em 4em 0;
+  }
+
+  .no-js .grid__item {
+    display: inline-block;
+    width: calc(33.33% - 0.4em);
+    margin: 2em 0;
+  }
+
+  @media screen and (min-width: 52.5em) {
+    .grid__item {
+      width: 33.33%;
+      margin: 0 0 9em;
+    }
+  }
+
+  @media screen and (max-width: 36em) {
+    .grid__item {
+      width: 100%;
+      margin: 2em 0;
+      padding: 1em 2em 0;
+    }
+  }
+
+  /* grid decoration */
+
+  .grid__item--deco::before {
+    font-family: 'nexa_boldregular', sans-serif;
+    font-size: 15em;
+    position: absolute;
+    z-index: -1;
+    top: -1em;
+    left: -0.15em;
+    opacity: 0.1;
+  }
+
+  .grid__item--deco-1::before {
+    content: '1985';
+  }
+
+  .grid__item--deco-2::before {
+    content: '1974';
+  }
+
+  .grid__item--deco-3::before {
+    content: '2015';
+  }
+
+  /* grid link */
+
+  .grid__link {
+    position: relative;
+    display: block;
+    color: #474283;
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+  }
+
+  .grid__link:hover {
+    color: #474283;
+    outline: none;
+  }
+
+  /* image wrap and deco lp */
+
+  .img-wrap {
+    position: relative;
+  }
+
+  .lp {
+    position: absolute;
+  }
+
+  .lp--grid {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translate3d(10%, 0, 0);
+    transform: translate3d(10%, 0, 0);
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+  }
+
+  .grid__link:hover .lp {
+    -webkit-transform: translate3d(20%, 0, 0);
+    transform: translate3d(20%, 0, 0);
+  }
+
+  .img {
+    display: block;
+  }
+
+  .img--grid {
+    position: relative;
+    max-width: 100%;
+    box-shadow: 2px 16px 26px 0px rgba(36, 33, 69, 0.3);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  .artist {
+    font-size: 0.85em;
+    font-weight: normal;
+    margin: 1em 0 0.5em;
+  }
+
+  .title {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0 0 0 3em;
+    white-space: nowrap;
+  }
+
+  .year {
+    font-size: 0.85em;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    margin: -1em -1em 0 0;
+    padding: 0.3em 0.5em;
+    color: #fff;
+    border: 2px solid;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  .year--contrast {
+    color: inherit;
+  }
+</style>
+
