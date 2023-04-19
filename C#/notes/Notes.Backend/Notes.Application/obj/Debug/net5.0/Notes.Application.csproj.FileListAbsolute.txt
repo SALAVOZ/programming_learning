@@ -1,0 +1,15 @@
+C:\notes_app\Notes.Backend\Notes.Application\bin\Debug\net5.0\Notes.Application.deps.json
+C:\notes_app\Notes.Backend\Notes.Application\bin\Debug\net5.0\Notes.Application.dll
+C:\notes_app\Notes.Backend\Notes.Application\bin\Debug\net5.0\Notes.Application.pdb
+C:\notes_app\Notes.Backend\Notes.Application\obj\Debug\net5.0\Notes.Application.csproj.AssemblyReference.cache
+C:\notes_app\Notes.Backend\Notes.Application\obj\Debug\net5.0\Notes.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\notes_app\Notes.Backend\Notes.Application\obj\Debug\net5.0\Notes.Application.AssemblyInfoInputs.cache
+C:\notes_app\Notes.Backend\Notes.Application\obj\Debug\net5.0\Notes.Application.AssemblyInfo.cs
+C:\notes_app\Notes.Backend\Notes.Application\obj\Debug\net5.0\Notes.Application.csproj.CoreCompileInputs.cache
+C:\notes_app\Notes.Backend\Notes.Application\obj\Debug\net5.0\Notes.Application.dll
+C:\notes_app\Notes.Backend\Notes.Application\obj\Debug\net5.0\refint\Notes.Application.dll
+C:\notes_app\Notes.Backend\Notes.Application\obj\Debug\net5.0\Notes.Application.pdb
+C:\notes_app\Notes.Backend\Notes.Application\obj\Debug\net5.0\ref\Notes.Application.dll
+C:\notes_app\Notes.Backend\Notes.Application\bin\Debug\net5.0\Notes.Domain.dll
+C:\notes_app\Notes.Backend\Notes.Application\bin\Debug\net5.0\Notes.Domain.pdb
+C:\notes_app\Notes.Backend\Notes.Application\obj\Debug\net5.0\Notes.Application.csproj.CopyComplete

@@ -1,0 +1,12 @@
+C:\notes_app\Notes.Backend\Notes.Infrastructure\bin\Debug\net5.0\Notes.Infrastructure.deps.json
+C:\notes_app\Notes.Backend\Notes.Infrastructure\bin\Debug\net5.0\Notes.Infrastructure.dll
+C:\notes_app\Notes.Backend\Notes.Infrastructure\bin\Debug\net5.0\Notes.Infrastructure.pdb
+C:\notes_app\Notes.Backend\Notes.Infrastructure\obj\Debug\net5.0\Notes.Infrastructure.csproj.AssemblyReference.cache
+C:\notes_app\Notes.Backend\Notes.Infrastructure\obj\Debug\net5.0\Notes.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\notes_app\Notes.Backend\Notes.Infrastructure\obj\Debug\net5.0\Notes.Infrastructure.AssemblyInfoInputs.cache
+C:\notes_app\Notes.Backend\Notes.Infrastructure\obj\Debug\net5.0\Notes.Infrastructure.AssemblyInfo.cs
+C:\notes_app\Notes.Backend\Notes.Infrastructure\obj\Debug\net5.0\Notes.Infrastructure.csproj.CoreCompileInputs.cache
+C:\notes_app\Notes.Backend\Notes.Infrastructure\obj\Debug\net5.0\Notes.Infrastructure.dll
+C:\notes_app\Notes.Backend\Notes.Infrastructure\obj\Debug\net5.0\refint\Notes.Infrastructure.dll
+C:\notes_app\Notes.Backend\Notes.Infrastructure\obj\Debug\net5.0\Notes.Infrastructure.pdb
+C:\notes_app\Notes.Backend\Notes.Infrastructure\obj\Debug\net5.0\ref\Notes.Infrastructure.dll
