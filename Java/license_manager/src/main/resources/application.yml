@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/license_manager
+    username: postgres
+    password: salavat
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        createDatabaseIfNotExist: true
+    database: postgresql
+    datasource: org.hibernate.dialect.PostgreSQL95Dialect
