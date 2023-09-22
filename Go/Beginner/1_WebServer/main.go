@@ -1,44 +1,36 @@
 package main
 
 import (
+	"crypto/tls"
 	"fmt"
-	"log"
+	"github.com/PuerkitoBio/goquery"
+	"github.com/gophish/gophish/dialer"
 	"net/http"
 )
 
-func helloHandler(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/hello" {
-		http.Error(w, "404 Not Found", http.StatusNotFound)
-		return
-	}
-	if r.Method != "GET" {
-		http.Error(w, "Method is not supported", http.StatusNotFound)
-		return
-	}
-	fmt.Fprintf(w, "hello")
-}
-
-func formHandler(w http.ResponseWriter, r *http.Request) {
-	if err := r.ParseForm(); err != nil {
-		fmt.Fprintf(w, "ParseForm() err :%v", err)
-		return
-	}
-	fmt.Fprintf(w, "Post request successful")
-	name := r.FormValue("name")
-	address := r.FormValue("address")
-	fmt.Fprintf(w, "Name = %s\n", name)
-	fmt.Fprintf(w, "Address = %s\n", address)
+type cloneRequest struct {
+	URL              string `json:"url"`
+	IncludeResources bool   `json:"include_resources"`
 }
 
 func main() {
-	var port uint = 8000
-	fileServer := http.FileServer(http.Dir("./static"))
-	http.Handle("/", fileServer)
-	http.HandleFunc("/form", formHandler)
-	http.HandleFunc("/hello", helloHandler)
-
-	fmt.Printf("Starting server at port %v", port)
-	if err := http.ListenAndServe(":8000", nil); err != nil {
-		log.Fatal(err)
+	restrictedDialer := dialer.Dialer()
+	tr := &http.Transport{
+		DialContext: restrictedDialer.DialContext,
+		TLSClientConfig: &tls.Config{
+			InsecureSkipVerify: true,
+		},
 	}
+	client := &http.Client{Transport: tr}
+	resp, err := client.Get("http://192.168.146.128:81/")
+	if err != nil {
+		panic("sex")
+	}
+	d, err := goquery.NewDocumentFromResponse(resp)
+	h, err := d.Html()
+	if err != nil {
+		return
+	}
+	fmt.Println(h)
+
 }
